@@ -1,0 +1,8 @@
+#!/bin/bash
+export NVM_DIR="$HOME/.nvm"
+. /home/synapse/.nvm/nvm.sh
+
+APPSERVICE_DIR="/home/synapse/.nvm/versions/node/v9.5.0/lib/node_modules/matrix-appservice-irc"
+APPSERVICE_CONFIG_DIR="/home/synapse/appservice-irc"
+matrix-appservice-irc -c /home/synapse/appservice-irc/config.yaml -f /home/synapse/appservice-irc/registration.yaml -p 8069
+#tmux detach

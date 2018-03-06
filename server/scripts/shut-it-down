@@ -1,0 +1,8 @@
+#!/bin/bash
+pushd ./
+cd ~/.synapse
+source ./bin/activate
+synctl stop
+killall node
+popd
+exit

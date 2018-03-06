@@ -1,0 +1,6 @@
+#!/bin/bash
+pushd ./
+cd ~/appservice-irc
+matrix-appservice-irc -r -f registration.yaml -u "http://localhost:8069" -c config.yaml -l irc_bot
+popd
+exit

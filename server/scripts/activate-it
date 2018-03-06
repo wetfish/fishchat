@@ -1,0 +1,18 @@
+#!/bin/bash
+
+APPSERVICE_CONFIG_DIR=/home/synapse/appservice-irc
+APPSERVICE_DIR=/home/synapse/.nvm/versions/node/v9.5.0/lib/node_modules/matrix-appservice-irc
+SYNAPSE_DIR=/home/synapse/.synapse
+
+pushd ./
+cd ~/.synapse
+source ./bin/activate
+synctl restart
+appservice-irc-start
+#cd ~/appservice-irc
+#killall node
+#forever -l  $APPSERVICE_CONFIG_DIR/forever.log -o $APPSERVICE_CONFIG_DIR/irc.log -e $APPSERVICE_CONFIG_DIR/err.log $APPSERVICE_DIR/app.js  -c $APPSERVICE_CONFIG_DIR/config.yaml -f $APPSERVICE_CONFIG_DIR/registration.yaml -p 8069
+#matrix-appservice-irc -c ./config.yaml -f ./registration.yaml -p 8069 &
+turnserver-start
+popd
+exit

@@ -1,0 +1,17 @@
+[Unit]
+Description=IRC appservice for Matrix.
+After=network.target
+After=syslog.target
+
+[Service]
+Type=simple
+User=synapse
+Group=synapse
+WorkingDirectory=/home/synapse/appservice-irc
+ExecStart=/bin/bash /home/synapse/scripts/appservice-irc-start-systemd
+Restart=always
+Environment=USER=synapse HOME=/home/synapse
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target
